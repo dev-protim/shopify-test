@@ -1,0 +1,82 @@
+{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
+
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'announcement' -%}
+    <div class="announcement-bar color-{{ block.settings.color_scheme }}">
+      <p class="text-{{block.settings.text_alignment}}">{{ block.settings.text | escape }}</p>
+    </div>
+  {%- endcase -%}
+{%- endfor -%}
+
+{% schema %}
+  {
+    "name": "Announcement Bar",
+    "max_blocks": 12,
+    "class": "announcement-bar-section",
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "Announcement Bar",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "default": "Welcome to our store",
+            "label": "Announcement Text"
+          }, {
+            "type": "select",
+            "id": "color_scheme",
+            "options": [
+              {
+                "value": "accent-1",
+                "label": "Accent 1"
+              },
+              {
+                "value": "accent-2",
+                "label": "Accent 2"
+              },
+              {
+                "value": "background-1",
+                "label": "Background 1"
+              },
+              {
+                "value": "background-2",
+                "label": "Background 2"
+              }, {
+                "value": "inverse",
+                "label": "Inverse"
+              }
+            ],
+            "default": "accent-1",
+            "label": "Accent 1"
+          }, {
+            "type": "select",
+            "id": "text_alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Text Left"
+              }, {
+                "value": "center",
+                "label": "Text Center"
+              }, {
+                "value": "right",
+                "label": "Text Right"
+              }
+            ],
+            "default": "center",
+            "label": "Text Alignment"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  }
+{% endschema %}

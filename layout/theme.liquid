@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body>
+    {% sections 'header-group' %}
+    {{ content_for_layout }}
+  </body>
+</html>

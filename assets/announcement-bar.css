@@ -1,0 +1,30 @@
+.announcement-bar {
+    padding: 15px;
+}
+.announcement-bar p {
+    font-size: 16px;
+}
+
+.announcement-bar.color-accent-1 {
+    background-color: aliceblue;
+}
+
+.announcement-bar.color-accent-2 {
+    background-color: rgb(225, 225, 225);
+}
+
+.announcement-bar.color-background-1 {
+    background-color: rgb(255, 255, 255);
+}
+
+.announcement-bar.color-background-2 {
+    background-color: rgb(255, 255, 255);
+}
+
+.announcement-bar.color-inverse {
+    background-color: rgb(7, 7, 7);
+}
+
+.announcement-bar.color-inverse p {
+    color: #ffffff;
+}
